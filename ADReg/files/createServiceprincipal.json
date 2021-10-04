@@ -1,0 +1,8 @@
+{
+  "accountEnabled": true,
+  "appId": "<%appID%>",
+  "appRoleAssignmentRequired": true,
+  "displayName": "<%applicationName%>",
+  "servicePrincipalNames": [ "<%appID%>" ],
+  "servicePrincipalType": "Application"
+}

@@ -1,0 +1,8 @@
+{
+  "clientId": "<%appID%>", // object Id got after added servicepricnipal for the application.
+  "consentType": "AllPrincipals",
+  "principalId": null,
+  "resourceId": "<%resourceID%>", //object ID of permission. you can get using getserviceprincial.
+  "scope": "<%scopeName%>",
+  "expiryTime": "3000-01-01"
+}

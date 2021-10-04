@@ -1,0 +1,63 @@
+﻿@page
+@model ADReg.Views.Register.IndexModel
+@{
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <label for="Name">Name</label>
+                <input type="text" class="form-control" id="Name" name="Name" aria-describedby="name" placeholder="Enter Name of Client">
+                <small id="nameHelp" class="form-text text-muted">enter name of client with which you want to register.</small>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="email">Point of contact</label>
+                <input type="email" class="form-control" id="Email" name="Email" aria-describedby="name" placeholder="Enter email of point of contact">
+                <small id="nameHelp" class="form-text text-muted">enter email of client of point of contact.</small>
+            </div>
+        </div>
+    </div>
+    <div class="row align-right">
+        <div class="col">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+}
+<div class="row">
+    <div class="col">
+        @{
+            if (ViewBag.Response != null)
+            {
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><b>Client ID</b></td>
+                            <td><b>&nbsp;&nbsp;:&nbsp;&nbsp;</b></td>
+                            <td>@ViewBag.Response.ApplicationID</td>
+                        </tr>
+                        <tr>
+                            <td><b>Client Secret</b></td>
+                            <td><b>&nbsp;&nbsp;:&nbsp;&nbsp;</b></td>
+                            <td>@ViewBag.Response.ClientSecret</td>
+                        </tr>
+                        <tr>
+                            <td><b>Tenant ID</b></td>
+                            <td><b>&nbsp;&nbsp;:&nbsp;&nbsp;</b></td>
+                            <td>@ViewBag.Response.TenantID</td>
+                        </tr>
+                        <tr>
+                            <td><b>Scope</b></td>
+                            <td><b>&nbsp;&nbsp;:&nbsp;&nbsp;</b></td>
+                            <td>@ViewBag.Response.Scope</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            }
+        }
+    </div>
+</div>
